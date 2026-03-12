@@ -1,0 +1,1 @@
+https://github.com/Red-Banana-Official/cstrike1.6_rehlds
