@@ -129,6 +129,16 @@
             "user_editable": true,
             "rules": "required|string|max:128",
             "field_type": "text"
+        },
+        {
+            "name": "Timezone",
+            "description": "Container timezone. Example: Europe/Moscow",
+            "env_variable": "TZ",
+            "default_value": "Europe/Moscow",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:64",
+            "field_type": "text"
         }
     ]
 }
