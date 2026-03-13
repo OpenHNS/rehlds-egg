@@ -149,6 +149,16 @@
             "user_editable": true,
             "rules": "required|string|max:256",
             "field_type": "text"
+        },
+        {
+            "name": "ReHLDS Console Log File",
+            "description": "Path for mirrored console log when debug mode is enabled.",
+            "env_variable": "REHLDS_CONSOLE_LOG_FILE",
+            "default_value": "/home/container/logs/console.log",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:256",
+            "field_type": "text"
         }
     ]
 }
