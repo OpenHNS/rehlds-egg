@@ -132,7 +132,7 @@
         },
         {
             "name": "ReHLDS Debug Mode",
-            "description": "Enable ReHLDS debug logging (adds -condebug and syserror_logfile). 0 = off, 1 = on.",
+            "description": "Enable ReHLDS syserror logging. 0 = off, 1 = on.",
             "env_variable": "REHLDS_DEBUG_MODE",
             "default_value": "0",
             "user_viewable": true,
@@ -151,13 +151,13 @@
             "field_type": "text"
         },
         {
-            "name": "ReHLDS Console Log File",
-            "description": "Path for mirrored console log when debug mode is enabled.",
-            "env_variable": "REHLDS_CONSOLE_LOG_FILE",
-            "default_value": "/home/container/logs/console.log",
+            "name": "Console log (0/1)",
+            "description": "Write panel console output to /home/container/logs/console/YYYY-MM-DD.log. 0 = off, 1 = on.",
+            "env_variable": "CONSOLE_LOG",
+            "default_value": "0",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|max:256",
+            "rules": "required|boolean",
             "field_type": "text"
         }
     ]
