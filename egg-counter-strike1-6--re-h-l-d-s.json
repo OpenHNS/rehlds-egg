@@ -12,10 +12,10 @@
         "steam_disk_space"
     ],
     "docker_images": {
-        "ghcr.io\/openhns\/games-source-ubuntu24:0.2": "ghcr.io\/openhns\/games-source-ubuntu24:0.2"
+        "ghcr.io\/openhns\/games-source-ubuntu24:0.3": "ghcr.io\/openhns\/games-source-ubuntu24:0.3"
     },
     "file_denylist": [],
-    "startup": ".\/hlds_run -console -game {{HLDS_GAME}} -port {{SERVER_PORT}} -sport {{VAC_PORT}} +map {{SRCDS_MAP}} +ip 0.0.0.0 -strictportbind -norestart +maxplayers 32 +pingboost 2 +sys_ticrate 1200",
+    "startup": "TZ=${TZ_DATE} .\/hlds_run -console -game ${HLDS_GAME} -port ${SERVER_PORT} -sport ${VAC_PORT} +map ${SRCDS_MAP} +ip 0.0.0.0 -strictportbind -norestart +maxplayers 32 +pingboost 2 +sys_ticrate 1200",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Connection to Steam servers successful\"\r\n}",
@@ -121,23 +121,33 @@
             "field_type": "text"
         },
         {
-            "name": "Server Hostname",
-            "description": "This sets the hostname of the server. Example: \"My Custom CS 1.6 Server\"",
-            "env_variable": "HOSTNAME",
-            "default_value": "Counter-Strike 1.6 Server",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:128",
-            "field_type": "text"
-        },
-        {
             "name": "Timezone",
             "description": "Container timezone. Example: Europe/Moscow",
-            "env_variable": "TZ",
+            "env_variable": "TZ_DATE",
             "default_value": "Europe/Moscow",
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:64",
+            "field_type": "text"
+        },
+        {
+            "name": "ReHLDS Debug Mode",
+            "description": "Enable ReHLDS debug logging (adds -condebug and syserror_logfile). 0 = off, 1 = on.",
+            "env_variable": "REHLDS_DEBUG_MODE",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "ReHLDS Debug Log File",
+            "description": "Path for syserror log file when debug mode is enabled.",
+            "env_variable": "REHLDS_DEBUG_LOG_FILE",
+            "default_value": "/home/container/logs/debug.log",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:256",
             "field_type": "text"
         }
     ]
