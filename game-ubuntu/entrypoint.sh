@@ -23,7 +23,9 @@ if [[ "${CONSOLE_LOG:-0}" == "1" ]]; then
   CONSOLE_DIR="${LOGS_DIR}/console"
   CONSOLE_LOG_FILE="${CONSOLE_DIR}/$(date +%Y-%m-%d).log"
   mkdir -p "${CONSOLE_DIR}"
-  exec bash -lc "${MODIFIED_STARTUP}" 2>&1 | tee -a "${CONSOLE_LOG_FILE}"
+  # Use redirection via process substitution instead of a pipeline.
+  # This keeps process handling compatible with Pterodactyl stop actions.
+  exec > >(tee -a "${CONSOLE_LOG_FILE}") 2>&1
 fi
 
 exec bash -lc "${MODIFIED_STARTUP}"
