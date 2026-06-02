@@ -1,1 +1,1 @@
-https://github.com/Red-Banana-Official/cstrike1.6_rehlds
+https://github.com/OpenHNS/rehlds-egg
