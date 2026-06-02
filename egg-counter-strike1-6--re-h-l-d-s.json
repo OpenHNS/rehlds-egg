@@ -5,7 +5,7 @@
         "update_url": null
     },
     "exported_at": "2026-03-12T16:15:58+03:00",
-    "name": "Counter Strike 1.6 - ReHLDS",
+    "name": "CS 1.6 dev - ReHLDS",
     "author": "openhns.src@gmail.com",
     "description": "CS 1.6 ReHLDS binaries egg.\r\n\r\nReHLDS is a reverse-engineered, optimized version of HLDS.\r\nDeveloped by third-party modders to improve stability, performance, and security.\r\nFully compatible with MetaMod, AMX Mod X, and other plugins.\r\n\r\nIncluded modules are rehlds, reunion, amxmodx, metamod-r, reapi and ReGameDLL_CS",
     "features": [
