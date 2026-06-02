@@ -8,13 +8,6 @@ LOGS_DIR="${LOGS_DIR:-/home/container/logs}"
 mkdir -p "${LOGS_DIR}"
 mkdir -p /home/container/cstrike/logs
 
-# Optional debug mode for ReHLDS/HLDS system error logs.
-if [[ "${REHLDS_DEBUG_MODE:-0}" == "1" ]]; then
-  DEBUG_LOG_FILE="${REHLDS_DEBUG_LOG_FILE:-${LOGS_DIR}/debug.log}"
-  mkdir -p "$(dirname "${DEBUG_LOG_FILE}")"
-  STARTUP="${STARTUP} +syserror_logfile ${DEBUG_LOG_FILE}"
-fi
-
 MODIFIED_STARTUP=$(eval echo "${STARTUP}")
 echo -e "=> Starting with command:\n${MODIFIED_STARTUP}\n"
 
